@@ -1,7 +1,7 @@
 <form action="action_page.php">
   <div class="container">
-                                     <h1>WELCOME TO THE TOPDAWG 90 DAYS SHREDDING PROGRAM!</h1>
-    <P>New user Register for DevOps/AWS Learning by TRAVIS</P>
+                                     <h1>WELCOME TO THE 90 DAYS SHREDDING PROGRAM!</h1>
+    <P>New user Register for DevOps/AWS Learning by TOPDAWG</P>
     <p>Please fill in this form to create an account.</p>
     <hr>
      

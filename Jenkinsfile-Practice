@@ -1,0 +1,51 @@
+pipeline {
+    agent any
+
+    environment {
+        DIR_NAME = 'my_directory'
+        FILE_NAME = 'my_file.txt'
+        FILE_CONTENT = 'Hello from Jenkins Pipeline!'
+    }
+
+    stages {
+        stage('Create Directory') {
+            steps {
+                sh 'mkdir -p $DIR_NAME'
+            }
+        }
+
+        stage('Create File and Write Inside') {
+            steps {
+                sh 'echo "$FILE_CONTENT" > $DIR_NAME/$FILE_NAME'
+            }
+        }
+
+        stage('Display File Content') {
+            steps {
+                sh 'cat $DIR_NAME/$FILE_NAME'
+            }
+        }
+
+        stage('Verify File Creation') {
+            steps {
+                script {
+                    def fileExists = sh(script: "test -f $DIR_NAME/$FILE_NAME", returnStatus: true) == 0
+                    if (fileExists) {
+                        echo "✅ File was created successfully."
+                    } else {
+                        error("❌ File was not created!")
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "🎉 Pipeline completed successfully."
+        }
+        failure {
+            echo "❗ Pipeline failed. Check the previous steps for issues."
+        }
+    }
+}

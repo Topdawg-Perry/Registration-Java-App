@@ -36,20 +36,4 @@ pipeline {
             }
         }
     }
-
-    post {
-        success {
-            emailext body: 'Hey team, DEPLOYMENT was successful! Check details here: ${BUILD_URL}', 
-            subject: 'SUCCESS - ${JOB_NAME}', 
-            to: 'turkswan7@gmail.com'
-        
-        }
-        
-        failure {
-            emailext body: 'Hey team, the build FAILED. Check details here: ${BUILD_URL} and fix errors ASAP.', 
-            subject: 'FAILURE - ${JOB_NAME}', 
-            to:'turkswan7@gmail.com'
-            
-        }
-    }
 }

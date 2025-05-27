@@ -31,13 +31,13 @@
     </site>
 	      <repository>
 	      <id>nexus</id>
-	      <name>Travis Technologies Releases Nexus Repository</name>
+	      <name>admin</name>
 	      <url>http://56.228.81.19:8081/repository/Topdawg/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Travis Technologies Snapshot Nexus Repository </name>
+	      <name>admin</name>
 	      <url>http://56.228.81.19:8081/repository/Topdawg/</url>
 	    </snapshotRepository>
   </distributionManagement>
